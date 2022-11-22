@@ -18,4 +18,13 @@ Por defecto el servidor esta constantemente escuchando el puerto 3000
 
 (![image](https://user-images.githubusercontent.com/78920592/203361196-5b65b19e-7c45-4f6d-a469-5a98b2173b47.png))
 
+### Publicamos el codigo en GitHub
 
+Configuramos la autenticación SSH para evitar ingresar la contraseña cada vez que se ejecuta el comando. Geramos la clave de autenticación SSH
+
+![Imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Generamos%20la%20clave%20en%20linux.png?raw=true)
+![Imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Generacion%20de%20clave%20SSH.png?raw=true)
+
+Sincronizamos nuestro repositorio y asi poder evidenciar los cambios que se desarrollen en la pracica
+
+![Imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Sincronicando%20reposiorio%20Git%20a%20UBUNTU.png?raw=true)
