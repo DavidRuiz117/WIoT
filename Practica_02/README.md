@@ -28,3 +28,33 @@ Configuramos la autenticación SSH para evitar ingresar la contraseña cada vez 
 Sincronizamos nuestro repositorio y asi poder evidenciar los cambios que se desarrollen en la pracica
 
 ![Imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Sincronicando%20reposiorio%20Git%20a%20UBUNTU.png?raw=true)
+
+## Los verbos HTTP
+
+Trabajamos con Visual Studio Code, instalando la extension de Remote -SSH
+
+![image](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Remote%20-SSh.png?raw=true)
+
+Se ejecuta una petición Get, por esta razón el método anterior se ejecuta cuando se ingresa la dirección IP y puerto del servidor en el navegador Web. Los cambios se ven reflejados con la actualizacion de la carpeta montada.
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Modificacion%20Hola%20Mundo%201.png?raw=true)
+
+Se verificar que el servidor responde con el mensaje de texto, se debe ingresar la dirección IP del servidor en el navegador Web o usando el comando CURL como se hizo previamente.
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Modificacion%20Hola%20Mundo%202.png?raw=true)
+
+Creando un modificador
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/%C2%B4Creando%20una%20variable%20persona.png?raw=true)
+
+Después se creará un método para modificar el mensaje adicional, y este método será invocado como un POST utilizando la ruta como entrada del parámetro nombre
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Metodo%20POST.png?raw=true)
+
+Para validar el cambio en la variable desde el navegador, se debe llamará nuevamente al servidor al método GET como se ha hecho anteriormente. En el navegador se observará el mensaje
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Metodo%20POST%202.png?raw=true)
+
+Se sube los cambios realizados a GitHub invocando en la terminal de la maquina virtual
+
+![imagen](https://github.com/DavidRuiz117/WIoT/blob/main/Practica_02/Se%20guardan%20los%20cambios%20realizados%20a%20GitHub%20por%20terminal.png?raw=true)
