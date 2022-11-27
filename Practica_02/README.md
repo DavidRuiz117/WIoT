@@ -178,6 +178,10 @@ Observamos que si se realizo la peticion y lo visualizamos en el navegador
 
 Se pueden evidenciar los cambios relizados en el panel inferior
 
+## Se crea un commit en el repositorio a traves de la conexion remota con los siguientes comandos en la terminal.
 
+![image](https://user-images.githubusercontent.com/78920592/204150526-85e49b7c-4327-4670-9a7f-fe24aa81a071.png)
+
+## Se finalizo la practica 2
 
 
