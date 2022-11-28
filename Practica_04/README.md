@@ -67,4 +67,12 @@ module.exports = app;
 
 ![image](https://user-images.githubusercontent.com/78920592/204343545-0ea2ebbb-954d-47f1-ae42-4b5de37224c8.png)
 
+6. Antes se debe compilar el proyecto. Para ello ejecutamos en la terminal:
 
+![image](https://user-images.githubusercontent.com/78920592/204344021-e05eec9c-08f7-488b-a4c9-63a4abe1a24d.png)
+
+7. Publicar la aplicación ejecutando en la terminal:
+
+Si todo es correcto en la terminal tendrá la siguiente salida:
+
+![image](https://user-images.githubusercontent.com/78920592/204347291-77030154-0428-4141-841b-208cb4a4894b.png)
