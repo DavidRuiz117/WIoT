@@ -400,10 +400,17 @@ export class AuthModule {}
 
 10. La terminal responderá con un token. Guarde este token para usarlo en los siguientes pasos.
 
-Token : ``` {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2OTYwNjA4MCwiZXhwIjoxNjY5NjA5NjgwfQ.Btc3GrIYuv1tB_LeEgnGDaXEhRyxp8bE5hLHLIc0biA"} ```
+Token : ``` {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2OTY1MjcxOSwiZXhwIjoxNjY5NjU2MzE5fQ.xkJTdH7Ny-RWvSi6KEV4GYkFzIlwB2fDSnIo3s240Fc"} ```
 
 11. Proteger el endpoint POST
 
 ![image](https://user-images.githubusercontent.com/78920592/204326129-b653cb91-8cb7-454e-838e-ca0df8eeeaa4.png)
 
-12. Si todo es correcto, será posible llamar al endpoint que genera un token JWT, esto se podrá validar con CURL con el siguiente comando, recuerde usar el token que generó en el paso 10
+12. Si todo es correcto, será posible llamar al endpoint que genera un token JWT, esto se podrá validar con CURL con el siguiente comando, recuerde usar el token que generó en el paso 10.
+
+![image](https://user-images.githubusercontent.com/78920592/204326690-f6f06ab1-ae3f-4f58-aff4-5e467291ac8b.png)
+
+La terminal responderá con el objeto creado. Si no se envía el token o el token es incorrecto, la terminal responderá con un error 401. Pero si poenmos el token que se genero con anteroridad ya nos permite acceder a la peticion
+
+![image](https://user-images.githubusercontent.com/78920592/204330078-275b2775-d774-4a2a-8261-49d1b76dadaa.png)
+
