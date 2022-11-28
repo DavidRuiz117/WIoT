@@ -141,3 +141,127 @@ export class CarroController {
   }
 }
   ```
+## Implementando seguridad
+
+Usualmente los servicios web requieren de seguridad para proteger la información que se envía y recibe. En este caso vamos a implementar un sistema de autenticación y autorización para que los usuarios puedan acceder a los recursos del servidor.
+
+  1. Instalar el paquete ```@nestjs/passport``` y ```passport```, que permitirá implementar la autenticación y autorización.
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204179184-1842e31e-f3ec-432a-81dc-e224c030365e.png)
+  
+  2. NestJS integra un método para generar módulos rápidamente, primero se creará un módulo para autenticación con los siguientes comandos:
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204179244-f693e9fc-7773-4f55-b10c-9f3c6d7b6870.png)
+
+Ahora aparecerá una carpeta de nombre auth en la carpeta src con los archivos auth.module.ts y auth.service.ts y un archivo auth.service.spec.ts que contiene las pruebas unitarias del servicio
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204179369-4dae8348-60f7-42b3-8f14-b94e2de6cb1a.png)
+
+  3. Asi mismo se creará un módulo para gestionar usuarios
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204179497-38f592a1-073b-40c2-a3b4-d01219d9e764.png)
+  
+  4. Luego, se implementa el servicio de usuarios, para este ejemplo se utilizarán un par de usuarios predefinidos
+  
+```
+import { Injectable } from '@nestjs/common';
+
+export type User = {
+   userId: number,
+   username: string,
+   password: string
+};
+
+@Injectable()
+export class UsersService {
+   private readonly users: User[] = [
+      {
+         userId: 1,
+         username: 'john',
+         password: 'changeme',
+      },
+      {
+         userId: 2,
+         username: 'maria',
+         password: 'guess',
+      },
+   ];
+
+   /**
+      * Recupera los datos del usuario
+      * @param username Nombre de usuario
+      * @returns 
+      */
+   async findOne(username: string): Promise<User | undefined> {
+      return this.users.find(user => user.username === username);
+   }
+}
+```
+  5. Ahora es necesario configurar el servicio para que esté disponible para otros servicios instanciados, en Nest se configuran como módulos, entonces se modifica el archivo ```users.module.ts``` así:
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204179733-caa92476-f130-4683-bea9-783b1ab21a68.png)
+  
+   6. Para obtener la funcionalidad esperada se modificará el archivo ```auth.service.ts```
+    
+    ![image](https://user-images.githubusercontent.com/78920592/204179900-6a537d57-a7d0-4bc9-88ba-f8dceaf9f30c.png)
+    
+    Ese servicio se encarga de validar que el usuario y la contraseña sean correctos, para eso se utiliza el servicio de usuarios.
+
+  7. Posteriormente hay que habilitar el servicio de gestión de usuarios en el módulo de autenticación, para eso se modifica el archivo ```auth.module.ts```:
+  ```
+import { Module } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { UsersModule } from '../users/users.module';
+
+@Module({
+   imports: [UsersModule], // Importa el módulo de usuarios
+   providers: [AuthService]
+})
+export class AuthModule {}
+```
+
+  8. implementar una estrategia para validar al usuario, esto se consigue con el paquete ```passport``` que se instaló previamente. Esto se consigue creando un archivo con el nombre ```local.strategy.ts``` dentro de la carpeta ```src/auth```.
+
+![image](https://user-images.githubusercontent.com/78920592/204180111-165830ad-d91a-4266-aabb-b3dc6a0deb77.png)
+
+  9. Ahora se debe configurar el módulo de autenticación para que utilice la estrategia de autenticación, para eso se modifica el archivo ```auth.module.ts```:
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204180294-0f15fc7b-d0ca-4b7e-860c-90fcd376a62b.png)
+
+  10. Por último, es momento de proteger a los enpoints desarrollados previamente con el nuevo servicio, primero se modifica el controlador de la siguiente manera:
+```
+import { Body, Controller, Delete, Get, Inject, Param, Patch, Post, Put, UseGuards } from '@nestjs/common';
+...
+import { AuthGuard } from '@nestjs/passport';
+
+...
+
+@Controller()
+export class PlayerControllerImpl implements PlayerController {
+...
+
+@UseGuards(AuthGuard('local')) // Se adiciona esta anotación
+@Post()
+create(@Body() datos: Player) ...
+```
+
+  11. Si todo está bien, en este punto al llamar al enpoint POST del servidor la respuesta debería ser esta:
+
+![image](https://user-images.githubusercontent.com/78920592/204180919-ae5833af-ff5b-499c-909d-41d44c39d2af.png)
+
+Esto indica que está prohibido el acceso al recurso, ya que no se ha autenticado al usuario.
+
+Para conseguirlo puede emplearse el comando `curl` de la siguiente manera:
+```
+curl -X POST http://localhost:3000 -d '{"username": "john", "password": "changeme", "name":"jugador"}' -H "Content-Type: application/json"
+```
+Para el ejemplo del jugador. En este punto debería crear un jugador, aunque tendrá un error, pues la contraseña estará contenida en el objeto que se guardará como un nuevo jugador:
+```
+{
+   "name": "Cristiano Ronaldo",
+   "lastname": "dos Santos Aveiro",
+   "age": 37,
+   "username": "john",
+   "password": "changeme"
+}
+```
