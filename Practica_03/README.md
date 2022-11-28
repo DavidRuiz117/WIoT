@@ -161,6 +161,10 @@ Ahora aparecerá una carpeta de nombre auth en la carpeta src con los archivos a
   
   ![image](https://user-images.githubusercontent.com/78920592/204179497-38f592a1-073b-40c2-a3b4-d01219d9e764.png)
   
+  Se Generan las siguientes carpetas
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204277316-da9995dc-96be-4e8d-b38b-660401c9c2cf.png)
+  
   4. Luego, se implementa el servicio de usuarios, para este ejemplo se utilizarán un par de usuarios predefinidos
   
 ```
