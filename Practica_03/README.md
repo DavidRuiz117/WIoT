@@ -414,3 +414,29 @@ La terminal responderá con el objeto creado. Si no se envía el token o el toke
 
 ![image](https://user-images.githubusercontent.com/78920592/204330078-275b2775-d774-4a2a-8261-49d1b76dadaa.png)
 
+13. Finalmente se va a protejer los endpoints que tengan capacidad de modificar o eliminar registros, agrege la evidencia del funcionamiento de los endpoints protegidos con JWT al informe en el documento
+
+Por lo tanto se añade ```@UseGuards(JwtAuthGuard)``` antes de los metodos DELETE y PATH:
+
+![image](https://user-images.githubusercontent.com/78920592/204331813-0a513b43-fd51-4d76-bf25-3199d4ae047c.png)
+
+Creamos una variable global en el programa POSTMAN para facilitar las peticiones con el token guardado en dicha variable:
+
+![image](https://user-images.githubusercontent.com/78920592/204333352-34073abe-83a4-480f-b29d-7abd6713f4e8.png)
+
+
+Se Realizan las prueba, primero para la peticion DELETE:
+
+  ![image](https://user-images.githubusercontent.com/78920592/204334411-64b5f459-8887-42bf-aa1e-83b347362a11.png)
+
+Como se observa en el panel inferior nos muestra el mensaje de ```true```, que nos permite verificar que la peticion ```DELETE``` fue realizada conrrectamente
+
+![image](https://user-images.githubusercontent.com/78920592/204335146-5e745e81-0220-486d-bba5-39ca16fcbab1.png)
+
+Se ha eliminado el otro carro dejando solo uno
+
+Se Realizan las prueba, segundo para la peticion PATH:
+  
+  ![image](https://user-images.githubusercontent.com/78920592/204335486-c06f1b54-09ac-4ae8-b2d7-726b0141a011.png)
+  
+  Como se observa en el panel inferior nos muestra la modificacion del color realizada, de esta manera nos permite verificar que la peticion ```PATH``` fue realizada conrrectamente
