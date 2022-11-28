@@ -42,3 +42,29 @@ return app.init();
 export default createNestServer;
 
 ```
+![image](https://user-images.githubusercontent.com/78920592/204340776-41086b60-3295-445a-93b4-9694fe6ea0c3.png)
+
+
+5. En la raíz del proyecto crear un nuevo archivo index.js con el siguiente contenido:
+
+```
+const express = require('express');
+const createServer = require('./dist/index').default;
+
+const app = express();
+let nest;
+
+app.use(async (req, res) => {
+if (!nest) {
+   nest = express();
+   await createServer(nest);
+}
+return nest(req, res);
+});
+
+module.exports = app;
+```
+
+![image](https://user-images.githubusercontent.com/78920592/204343545-0ea2ebbb-954d-47f1-ae42-4b5de37224c8.png)
+
+
