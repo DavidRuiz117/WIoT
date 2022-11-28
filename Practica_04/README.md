@@ -17,4 +17,9 @@ Se utiliza el servicio de hosting gratuito de ```Deta```
 
 ![image](https://user-images.githubusercontent.com/78920592/204339430-6642dc16-98fa-474a-bf88-82e6c0e11032.png)
 
-3. 
+3. Iniciar sesión en Deta ejecutando en la terminal:
+
+![image](https://user-images.githubusercontent.com/78920592/204340119-8db492c6-3485-4c5a-9519-104a0a50a9f2.png)
+
+![image](https://user-images.githubusercontent.com/78920592/204340314-243a8d25-6419-4579-adfa-7361b4ff0450.png)
+
