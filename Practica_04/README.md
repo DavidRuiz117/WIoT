@@ -23,3 +23,22 @@ Se utiliza el servicio de hosting gratuito de ```Deta```
 
 ![image](https://user-images.githubusercontent.com/78920592/204340314-243a8d25-6419-4579-adfa-7361b4ff0450.png)
 
+4. Crear un punto de entrada de la aplicación. El archivo ```src/index.ts``` debe quedar de la siguiente forma:
+
+```
+import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import { AppModule } from './app.module';
+
+const createNestServer = async (expressInstance) => {
+const app = await NestFactory.create(
+   AppModule,
+   new ExpressAdapter(expressInstance),
+);
+
+return app.init();
+};
+
+export default createNestServer;
+
+```
