@@ -13,3 +13,8 @@ Se utiliza el servicio de hosting gratuito de ```Deta```
 
 ![image](https://user-images.githubusercontent.com/78920592/204338869-2f4fdf7b-a8f9-49b0-ad09-8a91fb7e101e.png)
 
+2. Agregando la variable de entorno:
+
+![image](https://user-images.githubusercontent.com/78920592/204339430-6642dc16-98fa-474a-bf88-82e6c0e11032.png)
+
+3. 
