@@ -440,3 +440,5 @@ Se Realizan las prueba, segundo para la peticion PATH:
   ![image](https://user-images.githubusercontent.com/78920592/204335486-c06f1b54-09ac-4ae8-b2d7-726b0141a011.png)
   
   Como se observa en el panel inferior nos muestra la modificacion del color realizada, de esta manera nos permite verificar que la peticion ```PATH``` fue realizada conrrectamente
+
+## Finalizamos la practica 3
