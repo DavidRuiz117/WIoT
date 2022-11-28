@@ -403,3 +403,7 @@ export class AuthModule {}
 Token : ``` {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTY2OTYwNjA4MCwiZXhwIjoxNjY5NjA5NjgwfQ.Btc3GrIYuv1tB_LeEgnGDaXEhRyxp8bE5hLHLIc0biA"} ```
 
 11. Proteger el endpoint POST
+
+![image](https://user-images.githubusercontent.com/78920592/204326129-b653cb91-8cb7-454e-838e-ca0df8eeeaa4.png)
+
+12. Si todo es correcto, será posible llamar al endpoint que genera un token JWT, esto se podrá validar con CURL con el siguiente comando, recuerde usar el token que generó en el paso 10
