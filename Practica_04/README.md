@@ -123,5 +123,7 @@ En deta ya se pueden observar las peticiones
 
 el codigo contiene el usuario y la urls de mongodb con el fin de realizar la conexcion a la base de datos
 
+5. se crea un archivo para modelar la entidad, eso queda en la carpeta `src/<nombre_entidad>/domain/entities` y debe llamarse `Carros.entity.ts`, para este caso. El archivo debe quedar de la siguiente manera:
 
+![image](https://user-images.githubusercontent.com/78920592/204600570-0fff8aed-3c7b-4510-9867-24f1aa89df35.png)
 
