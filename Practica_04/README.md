@@ -127,3 +127,7 @@ el codigo contiene el usuario y la urls de mongodb con el fin de realizar la con
 
 ![image](https://user-images.githubusercontent.com/78920592/204600570-0fff8aed-3c7b-4510-9867-24f1aa89df35.png)
 
+6. se agrega la entidad en la configuración del módulo, para habilitar el repositorio:
+
+![image](https://user-images.githubusercontent.com/78920592/204601536-7c9f990f-24a3-41de-bfa5-27c5ce9f317b.png)
+
