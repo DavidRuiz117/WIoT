@@ -111,4 +111,8 @@ En deta ya se pueden observar las peticiones
 
 ![image](https://user-images.githubusercontent.com/78920592/204542176-c261883f-c4fb-41a7-86c1-414f0e87ad5a.png)
 
- 
+ 3. En el panel de mongo atlas, en la sección Connect seleccione la opción Connect your application. Copie la url de conexión y reemplace el valor de la variable MONGO_URL en el archivo ~/Documents/Servidores/practica_02/src/app.module.ts por la url de conexión.
+
+![image](https://user-images.githubusercontent.com/78920592/204542419-b2094128-6bb5-4136-bb3d-f90b2bab6704.png)
+
+![image](https://user-images.githubusercontent.com/78920592/204544012-1e03ad63-1b6a-40c5-80c0-b4175e3f3313.png)
