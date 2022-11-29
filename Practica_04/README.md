@@ -109,5 +109,6 @@ En deta ya se pueden observar las peticiones
 
 2. Instalamos las dependencias de TypeORM y MongoDB ejecutando en la terminal:
 
+![image](https://user-images.githubusercontent.com/78920592/204542176-c261883f-c4fb-41a7-86c1-414f0e87ad5a.png)
 
  
