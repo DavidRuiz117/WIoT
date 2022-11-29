@@ -131,3 +131,7 @@ el codigo contiene el usuario y la urls de mongodb con el fin de realizar la con
 
 ![image](https://user-images.githubusercontent.com/78920592/204601536-7c9f990f-24a3-41de-bfa5-27c5ce9f317b.png)
 
+7. Luego adicione en el constructor del servicio, para el ejemplo `src/player/domain/services/player.service.ts`:
+
+![image](https://user-images.githubusercontent.com/78920592/204602627-16ddb445-948b-4b29-8c60-36fbb785d0f4.png)
+
