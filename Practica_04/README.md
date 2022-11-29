@@ -101,4 +101,13 @@ En deta ya se pueden observar las peticiones
 
 ![image](https://user-images.githubusercontent.com/78920592/204537341-ae889520-b745-401f-9d0f-b32480ea9e61.png)
 
+## Conectando a una base de datos
 
+1. En este caso emplearemos una base de datos no relacional orientada a documentos llamada MongoDB, muy popular por su flexibilidad y alto rendimiento. Por lo tanto se crea una cuenta gratuita en MongoDB Atlas. Se crea el cluster, es necesario crear un usuario, para este ejemplo emplee Username and password. Y para facilitar la conexión la base de datos se recomienda crear una IP whitelist. COn todo esto ya se tendrá una base de datos MongoDB lista para ser utilizada.
+ 
+ ![image](https://user-images.githubusercontent.com/78920592/204539891-66ce173d-ade2-437d-83dd-cbc3b4e16424.png)
+
+2. Instalamos las dependencias de TypeORM y MongoDB ejecutando en la terminal:
+
+
+ 
