@@ -89,4 +89,11 @@ Copiamos el link y observamos que esta la informacion pertinente de nuestro obje
 
 ![image](https://user-images.githubusercontent.com/78920592/204534213-a5caeaa3-c79c-4799-9a70-5ecd586c70e3.png)
 
+10. Se activa los logs de la aplicación ejecutamos en la terminal:
+
+![image](https://user-images.githubusercontent.com/78920592/204535184-deda36c9-fcc3-437b-b518-df846c2ae4c3.png)
+
+En deta ya se pueden observar las peticiones
+
+![image](https://user-images.githubusercontent.com/78920592/204535400-287cb485-6058-4298-bd18-e6abfd9c5908.png)
 
