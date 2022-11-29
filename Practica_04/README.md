@@ -75,4 +75,6 @@ module.exports = app;
 
 Si todo es correcto en la terminal tendrá la siguiente salida:
 
-![image](https://user-images.githubusercontent.com/78920592/204347291-77030154-0428-4141-841b-208cb4a4894b.png)
+![image](https://user-images.githubusercontent.com/78920592/204532232-e3e91f13-b42e-4127-a8fb-9e00a9032a71.png)
+
+8.
