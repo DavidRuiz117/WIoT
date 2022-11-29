@@ -77,4 +77,16 @@ Si todo es correcto en la terminal tendrá la siguiente salida:
 
 ![image](https://user-images.githubusercontent.com/78920592/204532232-e3e91f13-b42e-4127-a8fb-9e00a9032a71.png)
 
-8.
+8. Para actualizar la aplicación ejecutamos en la terminal:
+
+9. Se desplega la aplicacion ejecutando lo siguiente en la terminal:
+
+![image](https://user-images.githubusercontent.com/78920592/204534008-8945b65d-573e-4551-bf5d-f799c65a299e.png)
+
+![image](https://user-images.githubusercontent.com/78920592/204533961-b561fda4-cfd4-4bbe-8bfb-5e8025fbc47c.png)
+
+Copiamos el link y observamos que esta la informacion pertinente de nuestro objeto.
+
+![image](https://user-images.githubusercontent.com/78920592/204534213-a5caeaa3-c79c-4799-9a70-5ecd586c70e3.png)
+
+
