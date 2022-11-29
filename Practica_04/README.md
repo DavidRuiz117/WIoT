@@ -97,3 +97,8 @@ En deta ya se pueden observar las peticiones
 
 ![image](https://user-images.githubusercontent.com/78920592/204535400-287cb485-6058-4298-bd18-e6abfd9c5908.png)
 
+11. Se Observa la peticion con el link generado en la seccion de micro del proyecto ````practica_2```
+
+![image](https://user-images.githubusercontent.com/78920592/204537341-ae889520-b745-401f-9d0f-b32480ea9e61.png)
+
+
