@@ -118,6 +118,29 @@ En deta ya se pueden observar las peticiones
 ![image](https://user-images.githubusercontent.com/78920592/204544012-1e03ad63-1b6a-40c5-80c0-b4175e3f3313.png)
 
 4. Modificamos el archivo app.module.ts que esta en la carpeta src de nuestro proyecto
+```
+import { TypeOrmModule } from '@nestjs/typeorm';
+...
+
+@Module({
+imports: [
+   AuthModule,
+   UsersModule,
+   TypeOrmModule.forRoot({
+      type: 'mongodb',
+      url: 'mongodb+srv://<usuario>:<password>...',
+   }),
+],
+controllers: [PlayerControllerImpl],
+providers: [
+   {
+      provide: 'PlayerService',
+      useClass: PlayerServiceImpl,
+   },
+],
+})
+export class AppModule {}
+   ```
 
 ![image](https://user-images.githubusercontent.com/78920592/204598958-995c3fef-843a-441e-b47d-735b29bdf82d.png)
 
@@ -125,13 +148,99 @@ el codigo contiene el usuario y la urls de mongodb con el fin de realizar la con
 
 5. se crea un archivo para modelar la entidad, eso queda en la carpeta `src/<nombre_entidad>/domain/entities` y debe llamarse `Carros.entity.ts`, para este caso. El archivo debe quedar de la siguiente manera:
 
+```
+import { Entity, Column, ObjectIdColumn } from 'typeorm';
+
+@Entity()
+export class PlayerEntity {
+   @ObjectIdColumn()
+   id: string;
+
+   @Column()
+   name: string;
+
+   @Column()
+   lastName: string;
+
+   @Column()
+   age: number;
+
+   @Column()
+   team: string;
+}
+```
+
 ![image](https://user-images.githubusercontent.com/78920592/204600570-0fff8aed-3c7b-4510-9867-24f1aa89df35.png)
 
 6. se agrega la entidad en la configuración del módulo, para habilitar el repositorio:
 
+```
+@Module({
+imports: [
+   ...
+   TypeOrmModule.forRoot({
+      type: 'mongodb',
+      url: 'mongodb+srv://<usuario>:<password>...',
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      synchronize: true, // Solo para desarrollo
+      logging: true,
+      autoLoadEntities: true,
+   }),
+   TypeOrmModule.forFeature([PlayerEntity])
+],
+...
+export class AppModule {}
+```
+
 ![image](https://user-images.githubusercontent.com/78920592/204601536-7c9f990f-24a3-41de-bfa5-27c5ce9f317b.png)
 
-7. Luego adicione en el constructor del servicio, para el ejemplo `src/player/domain/services/player.service.ts`:
+7. Luego adicione en el constructor del servicio, para el ejemplo `src/Carros/domain/services/Carros.service.ts`:
+
+```
+...
+@Injectable()
+export class PlayerServiceImpl implements PlayerService {
+constructor(
+   @InjectRepository(PlayerEntity)
+   private repository: MongoRepository<PlayerEntity>,
+) {}
+...
+```
 
 ![image](https://user-images.githubusercontent.com/78920592/204602627-16ddb445-948b-4b29-8c60-36fbb785d0f4.png)
 
+8.Ahora es necesario modificar los métodos para que utilicen el repositorio, para el ejemplo `src/Carros/domain/services/Carros.service.ts`:
+
+```
+...
+public async list(): Promise<PlayerEntity[]> {
+   return await this.repository.find();
+}
+
+public async create(playerData: PlayerEntity): Promise<InsertResult> {
+   const newPlayer = await this.repository.insert(playerData);
+   return newPlayer;
+}
+
+public async update(
+   id: number,
+   playerData: PlayerEntity,
+): Promise<UpdateResult> {
+   const updatedPlayer = await this.repository.update(id, playerData);
+   return updatedPlayer;
+}
+
+public async delete(id: number): Promise<boolean> {
+   const deleteResult = await this.repository.delete(id);
+   return deleteResult.affected > 0;
+}
+
+public async updateAge(id: number, edad: number): Promise<UpdateResult> {
+   const updatedPlayer = await this.repository.update(id, { age: edad });
+   return updatedPlayer;
+}
+...
+```
+
+![image](https://user-images.githubusercontent.com/78920592/204617835-be4674c5-bdec-49fe-a233-ff1688207d21.png)
