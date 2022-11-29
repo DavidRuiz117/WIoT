@@ -116,3 +116,12 @@ En deta ya se pueden observar las peticiones
 ![image](https://user-images.githubusercontent.com/78920592/204542419-b2094128-6bb5-4136-bb3d-f90b2bab6704.png)
 
 ![image](https://user-images.githubusercontent.com/78920592/204544012-1e03ad63-1b6a-40c5-80c0-b4175e3f3313.png)
+
+4. Modificamos el archivo app.module.ts que esta en la carpeta src de nuestro proyecto
+
+![image](https://user-images.githubusercontent.com/78920592/204598958-995c3fef-843a-441e-b47d-735b29bdf82d.png)
+
+el codigo contiene el usuario y la urls de mongodb con el fin de realizar la conexcion a la base de datos
+
+
+
