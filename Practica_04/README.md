@@ -244,3 +244,13 @@ public async updateAge(id: number, edad: number): Promise<UpdateResult> {
 ```
 
 ![image](https://user-images.githubusercontent.com/78920592/204617835-be4674c5-bdec-49fe-a233-ff1688207d21.png)
+
+
+9. Finalmente, si se ejecuta el proyecto localmente con npm run start:dev, ejecute un POST para crear un nuevo elemento. Si la respuesta es satisfactoria y si al ejecutar el GET se recupera el elemento creado, entonces la conexión con la base de datos fue exitosa.
+
+![image](https://user-images.githubusercontent.com/78920592/204689475-e9a2dd1e-e1c5-465f-955c-274c8655a2a6.png)
+
+![image](https://user-images.githubusercontent.com/78920592/204689520-c227d436-7d3d-4b33-8de2-3663627008d2.png)
+
+Conexion con base de datos Exitosa!!!!!
+
